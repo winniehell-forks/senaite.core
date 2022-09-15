@@ -6,6 +6,7 @@ env:
   PLONE_VERSION: "5.2"
 jobs:
   build-and-test:
+    if: github.event_name != "branch" || github.event.organization.name != "senaite"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
